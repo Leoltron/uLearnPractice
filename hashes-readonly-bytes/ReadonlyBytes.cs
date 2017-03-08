@@ -12,14 +12,13 @@ namespace hashes
         private readonly byte[] bytes;
         public int Count => bytes.Length;
         public byte this[int index] => bytes[index];
-        private int hashCode;
-        private bool hasHashCode;
+        private readonly int hashCode;
 
         public ReadonlyBytes(params byte[] bytes)
         {
             if (bytes == null) throw new ArgumentNullException();
             this.bytes = bytes;
-            hasHashCode = false;
+            hashCode = unchecked (bytes.Aggregate(0, (current, b) => current * 1023 + b));
         }
 
         public IEnumerator<byte> GetEnumerator()
@@ -67,12 +66,6 @@ namespace hashes
 
         public override int GetHashCode()
         {
-            if (!hasHashCode)
-            {
-                const int prime = 1023;
-                hashCode = bytes.Aggregate(0, (current, b) => current * prime + b);
-                hasHashCode = true;
-            }
             return hashCode;
         }
 
