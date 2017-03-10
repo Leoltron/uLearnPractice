@@ -1,8 +1,6 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace hashes
 {
@@ -18,7 +16,12 @@ namespace hashes
         {
             if (bytes == null) throw new ArgumentNullException();
             this.bytes = bytes;
-            hashCode = unchecked (bytes.Aggregate(0, (current, b) => current * 1023 + b));
+            hashCode = CalculateHashCode(bytes);
+        }
+
+        private static int CalculateHashCode(byte[] bytes)
+        {
+            return unchecked (bytes.Aggregate(0, (current, b) => current * 1023 + b));
         }
 
         public IEnumerator<byte> GetEnumerator()
@@ -41,18 +44,17 @@ namespace hashes
 
             var enumerableObj = obj as IEnumerable<byte>;
             if (enumerableObj == null) return false;
-            var thisEnumerator = GetEnumerator();
-            var objEnumerator = enumerableObj.GetEnumerator();
-            bool thisHasNext, objHasNext;
 
-            while ((thisHasNext = thisEnumerator.MoveNext()) & (objHasNext = objEnumerator.MoveNext()))
-                if (thisEnumerator.Current != objEnumerator.Current)
+            var i = 0;
+            foreach (var o in enumerableObj)
+            {
+                if (i >= bytes.Length)
                     return false;
-
-            thisEnumerator.Dispose();
-            objEnumerator.Dispose();
-
-            return !thisHasNext && !objHasNext;
+                if (bytes[i] != o)
+                    return false;
+                i++;
+            }
+            return i == bytes.Length;
         }
 
         public bool Equals(ReadonlyBytes other)
@@ -71,7 +73,7 @@ namespace hashes
 
         public override string ToString()
         {
-            return "[" + string.Join(", ", bytes) + "]";
+            return $"[{string.Join(", ", bytes)}]";
         }
     }
-}
+} 
