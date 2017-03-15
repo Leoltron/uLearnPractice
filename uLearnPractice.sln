@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hashes-readonly-bytes", "ha
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "func-brainfuck", "func-brainfuck\func-brainfuck.csproj", "{546FE969-C55C-4300-8273-1542BDBB741A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "func-rocket", "func-rocket\func-rocket.csproj", "{AEA51C51-7741-4686-9292-0EDD8F70C4AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{546FE969-C55C-4300-8273-1542BDBB741A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{546FE969-C55C-4300-8273-1542BDBB741A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{546FE969-C55C-4300-8273-1542BDBB741A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA51C51-7741-4686-9292-0EDD8F70C4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA51C51-7741-4686-9292-0EDD8F70C4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA51C51-7741-4686-9292-0EDD8F70C4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA51C51-7741-4686-9292-0EDD8F70C4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
