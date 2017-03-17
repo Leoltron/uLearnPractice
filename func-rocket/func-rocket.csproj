@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="Gravity.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="LevelTests.cs" />
     <Compile Include="Physics.cs" />
     <Compile Include="LevelsTask.cs" />
     <Compile Include="Program.cs" />
