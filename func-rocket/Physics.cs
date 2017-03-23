@@ -24,9 +24,9 @@ namespace func_rocket
 		{
 			var turnRate = turn == Turn.Left ? -maxTurnRate : turn == Turn.Right ? maxTurnRate : 0;
 			var dir = rocket.Direction + turnRate * dt;
-			var velocity = rocket.Velocity + force(rocket) * dt / mass;
+		    var velocity = rocket.Velocity+ force(rocket) * dt / mass;
 			if (velocity.Length > maxVelocity) velocity = velocity.Normalize() * maxVelocity;
-			var location = rocket.Location + velocity * dt;
+		    var location = rocket.Location + velocity * dt;
 			if (location.X < 0) velocity = new Vector(Math.Max(0, velocity.X), velocity.Y);
 			if (location.X > spaceSize.Width) velocity = new Vector(Math.Min(0, velocity.X), velocity.Y);
 			if (location.Y < 0) velocity = new Vector(velocity.X, Math.Max(0, velocity.Y));

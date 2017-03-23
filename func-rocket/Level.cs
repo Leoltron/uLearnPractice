@@ -21,7 +21,10 @@ namespace func_rocket
 		public Rocket Rocket;
 		public Vector Target;
 
-		public Gravity Gravity { get; private set; }
+	    public double dVelocityAngle;
+        public double dDirectionAngle;
+
+        public Gravity Gravity { get; private set; }
 
 		public bool IsCompleted => (Rocket.Location - Target).Length < 20;
 
@@ -29,9 +32,12 @@ namespace func_rocket
 		{
 			var force = ForcesTask.Sum(ForcesTask.GetThrustForce(1.0), ForcesTask.ConvertGravityToForce(Gravity, spaceSize));
 			Rocket = physics.MoveRocket(Rocket, force, turn, spaceSize, 0.3);
-		}
 
-		public void Reset()
+            dVelocityAngle = Rocket.Velocity.Angle - (Target - Rocket.Location).Angle;
+            dDirectionAngle = Rocket.Direction  - (Target - Rocket.Location).Angle;
+        }
+
+        public void Reset()
 		{
 			Rocket = InitialRocket;
 		}

@@ -69,13 +69,22 @@ namespace func_rocket
 		{
 			if (currentLevel == null) return;
 			MoveRocket();
-			if (currentLevel.IsCompleted)
-				timer.Stop();
-			else
-				Text = helpText + ". Iteration # " + iterationIndex++;
-			Invalidate();
+		    if (currentLevel.IsCompleted)
+		        timer.Stop();
+		    else
+		        Text = helpText + (". Iteration # " + iterationIndex++).PadRight(10) +
+		               " dVelocityAngle: " + t(currentLevel.dVelocityAngle).PadRight(10) +
+		               " dDirectionAngle: " + t(currentLevel.dDirectionAngle).PadRight(10) +
+             " RobotDirection: "+t(currentLevel.Rocket.Direction);
+
+            Invalidate();
 			Update();
 		}
+
+	    private String t(double d)
+	    {
+	        return d.ToString().Substring(0, d < 0 ? 6 : 5);
+	    }
 
 		private void MoveRocket()
 		{
