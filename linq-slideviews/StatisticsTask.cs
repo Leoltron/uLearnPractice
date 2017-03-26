@@ -8,23 +8,28 @@ namespace linq_slideviews
     {
         public static double GetMedianTimePerSlide(List<VisitRecord> visits, SlideType slideType)
         {
-            return visits
-                .GroupBy(visit => visit.UserId)
-                .Select(group => group
-                    .Bigramms()
-                    .Where(tuple => tuple.Item1.SlideType == slideType))
-                .SelectMany(GetTime).OrderBy(d => d).Median();
+            return visits.Count == 0
+                ? 0
+                : visits
+                    .OrderBy(visit => visit.DateTime)
+                    .GroupBy(visit => visit.UserId)
+                    .Select(group => group
+                        .Bigramms()
+                        .Where(tuple => tuple.Item1.SlideType == slideType))
+                    .SelectMany(GetVisitsTime)
+                    .OrderBy(d => d)
+                    .Median();
         }
 
-        private static IEnumerable<double> GetTime(IEnumerable<Tuple<VisitRecord, VisitRecord>> visitsBigrams)
+        private static IEnumerable<double> GetVisitsTime(IEnumerable<Tuple<VisitRecord, VisitRecord>> visitsBigrams)
         {
             var timeBuffer = 0d;
-            return visitsBigrams.Select(bigram => GetTime(bigram, ref timeBuffer)).Where(d => d >= 0);
+            return visitsBigrams.Select(bigram => GetVisitTime(bigram, ref timeBuffer)).Where(d => d >= 1 && d <= 120);
         }
 
-        private static double GetTime(Tuple<VisitRecord, VisitRecord> bigram, ref double timeBuffer)
+        private static double GetVisitTime(Tuple<VisitRecord, VisitRecord> bigram, ref double timeBuffer)
         {
-            var time = (double) (bigram.Item2.DateTime - bigram.Item1.DateTime).Seconds / 60;
+            var time = bigram.Item2.DateTime.Subtract(bigram.Item1.DateTime).TotalMinutes;
 
             if (bigram.Item1.SlideId == bigram.Item2.SlideId)
             {
