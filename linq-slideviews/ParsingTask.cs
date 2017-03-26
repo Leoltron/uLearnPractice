@@ -28,31 +28,12 @@ namespace linq_slideviews
 
         public static IDictionary<int, SlideRecord> ParseSlideRecords(IEnumerable<string> lines)
         {
-            return lines.Skip(1).Dis.Select()
-            var returnDict = new Dictionary<int, SlideRecord>();
-            var firstPassed = false;
-            foreach (var line in lines)
-            {
-                if (firstPassed)
-                {
-                    var data = line.Split(';');
-                    if (data.Length != 3)
-                        continue;
-
-                    int id;
-                    if (!int.TryParse(data[0], out id))
-                        continue;
-
-                    SlideType type;
-                    if (!TryParseSlydeType(data[1], out type))
-                        continue;
-
-                    returnDict.Add(id, new SlideRecord(id, type, data[2]));
-                }
-                else
-                    firstPassed = true;
-            }
-            return returnDict;
+            return
+                lines.Skip(1)
+                    .Select(line => line.Split(';'))
+                    .Select(ParseSlideRecord)
+                    .Where(slideRecord => slideRecord != null)
+                    .ToDictionary(slideRecord => slideRecord.SlideId);
         }
 
         public static IEnumerable<VisitRecord> ParseVisitRecords(
@@ -80,6 +61,23 @@ namespace linq_slideviews
             {
                 throw new FormatException($"Wrong line [{line}]");
             }
+        }
+
+        private static SlideRecord ParseSlideRecord(string[] data)
+        {
+            if (data.Length != 3)
+                return null;
+
+            int id;
+            if (!int.TryParse(data[0], out id))
+                return null;
+
+            SlideType type;
+            if (!TryParseSlydeType(data[1], out type))
+                return null;
+
+            return new SlideRecord(id, type, data[2]);
+
         }
     }
 }

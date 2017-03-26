@@ -15,9 +15,9 @@ namespace linq_slideviews
 			var visits = new List<VisitRecord>
 			{
 				new VisitRecord(1, 10, time, SlideType.Exercise),
-				new VisitRecord(1, 11, time + TimeSpan.FromMinutes(2), SlideType.Exercise),
-				new VisitRecord(1, 12, time + TimeSpan.FromMinutes(4), SlideType.Exercise),
-				new VisitRecord(1, 13, time + TimeSpan.FromMinutes(8), SlideType.Quiz),
+				new VisitRecord(1, 11, time + TimeSpan.FromMinutes(2), SlideType.Exercise), // 2
+				new VisitRecord(1, 12, time + TimeSpan.FromMinutes(4), SlideType.Exercise), // 2
+				new VisitRecord(1, 13, time + TimeSpan.FromMinutes(8), SlideType.Quiz), // 4
 				new VisitRecord(1, 14, time + TimeSpan.FromMinutes(100), SlideType.Exercise)
 			};
 			var median = StatisticsTask.GetMedianTimePerSlide(visits, SlideType.Exercise);
