@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,11 +14,12 @@ namespace Seminar
 
         static void Main()
         {
-            var dictionary = new Dictionary<char, Action>();
-            for (char c = 'A'; c < 'Z'; c++)
-                dictionary.Add(c, () => Console.Write(c));
-
-            dictionary['X']();
+            DateTime d;
+            if(DateTime.TryParseExact("2014-09-03 12:20:28", "yyyy-MM-dd HH:mm:ss",
+                        CultureInfo.InvariantCulture,
+                        DateTimeStyles.None,
+                        out d))
+            Console.WriteLine(d);
         }
     }
 

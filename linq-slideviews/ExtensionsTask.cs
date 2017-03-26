@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace linq_slideviews
 {
-	/*
+	
 	public static class ExtensionsTask
 	{
 		/// <summary>
@@ -14,7 +14,11 @@ namespace linq_slideviews
 		/// <exception cref="InvalidOperationException">Если последовательность не содержит элементов</exception>
 		public static double Median(this IEnumerable<double> items)
 		{
-			throw new NotImplementedException();
+		    var list = items.ToList();
+		    if (list.Count == 0)
+		        throw new InvalidOperationException();
+
+		    return list.Count % 2 == 0 ? (list[list.Count / 2] + list[list.Count / 2 - 1]) / 2 : list[list.Count / 2];
 		}
 
 		/// <returns>
@@ -23,8 +27,18 @@ namespace linq_slideviews
 		/// </returns>
 		public static IEnumerable<Tuple<T, T>> Bigramms<T>(this IEnumerable<T> items)
 		{
-			throw new NotImplementedException();
+		    var firstItemPassed = false;
+		    var prevItem = default(T);
+		    foreach (var item in items)
+		    {
+		        if (firstItemPassed)
+		            yield return Tuple.Create(prevItem, item);
+		        else
+		            firstItemPassed = true;
+		        prevItem = item;
+
+		    }
 		}
 	}
-	*/
+	
 }
