@@ -12,7 +12,8 @@ namespace func_rocket
          **/
         private const double MaxDAngle = Math.PI / 4;
 	    public static Turn ControlRocket(Rocket rocket, Vector target)
-        {
+	    {
+	        return Turn.None;
 		    var dVelocityAngle = rocket.Velocity.Angle - (target - rocket.Location).Angle;
 
            /* if (Math.Abs(dVelocityAngle) > MaxDAngle)
