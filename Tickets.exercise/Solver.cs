@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tickets
 {
-    
+    public static class Solver
+    {
+        public static string Solve(int totalLen, int totalSum)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

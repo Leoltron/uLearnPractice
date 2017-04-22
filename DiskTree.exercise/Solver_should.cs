@@ -29,6 +29,7 @@ namespace DiskTree
         public void Test4() { MakeTest(new List<string> { @"!#$%&'()\-@^_`{}~\!#$%&'()\-@^_`{}~\!#$%&'()\-@^_`{}~\!#$%&'()\-@^_`{}~\!#$%&'()", }, new List<string> { @"!#$%&'()", @" -@^_`{}~", @"  !#$%&'()", @"   -@^_`{}~", @"    !#$%&'()", @"     -@^_`{}~", @"      !#$%&'()", @"       -@^_`{}~", @"        !#$%&'()", }); }
 
         [Test]
-        public void Test5() { MakeTest(new List<string> { @"AAAA", @"AAAA\AAAA", @"AAA\AA\AAA", @"A\AAA\AAA", @"AA\A\AAAA", @"AAA\A\AAAA", @"AA\AAA", @"A\A\A\A", @"AA\AA\AA\AA", @"AAA\AAA\AAA\AAA", @"AAAA\AAAA\AAAA\AAAA", @"AA\AA\AA", @"A\AA\A\AA", }, new List<string> { @"A", @" A", @"  A", @"   A", @" AA", @"  A", @"   AA", @" AAA", @"  AAA", @"AA", @" A", @"  AAAA", @" AA", @"  AA", @"   AA", @" AAA", @"AAA", @" A", @"  AAAA", @" AA", @"  AAA", @" AAA", @"  AAA", @"   AAA", @"AAAA", @" AAAA", @"  AAAA", @"   AAAA", }); }
+        public void Test5() { MakeTest(new List<string> { @"AAAA", @"AAAA\AAAA", @"AAA\AA\AAA", @"A\AAA\AAA", @"AA\A\AAAA", @"AAA\A\AAAA", @"AA\AAA", @"A\A\A\A", @"AA\AA\AA\AA", @"AAA\AAA\AAA\AAA", @"AAAA\AAAA\AAAA\AAAA", @"AA\AA\AA", @"A\AA\A\AA", }, new List<string> { @"A", @" A", @"  A", @"   A", @" AA", @"  A", @"   AA", @" AAA", @"  AAA", @"AA", @" A", @"  AAAA", @" AA", @"  AA", @"   AA", @" AAA", @"AAA", @" A", @"  AAAA", @" AA", @"  AAA", @" AAA", @"  AAA", @"   AAA", @"AAAA", @" AAAA", @"  AAAA", @"   AAAA", }); }
+
     }
 }

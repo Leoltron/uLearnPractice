@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiskTree
 {
-    
+    public static class Solver
+    {
+        public static IEnumerable<string> Solve(List<string> input)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
