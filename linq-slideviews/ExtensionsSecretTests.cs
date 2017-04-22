@@ -34,13 +34,13 @@ namespace linq_slideviews
 		public void Bigrams_DontEnumerateSequenceTwice()
 		{
 			strangeEnumerated = false;
-			StrangeSequence(3.0, 10).Bigramms().ToList();
+			StrangeSequence(3.0, 10).Bigrams().ToList();
 		}
 
 		[Test]
 		public void Bigrams_IsLazy()
 		{
-			KillingSequence(3.0, 10).Bigramms().Take(9).ToList();
+			KillingSequence(3.0, 10).Bigrams().Take(9).ToList();
 		}
 	}
 }

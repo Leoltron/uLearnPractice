@@ -25,7 +25,7 @@ namespace linq_slideviews
 		/// Возвращает последовательность, состоящую из пар соседних элементов.
 		/// Например, по последовательности {1,2,3} метод должен вернуть две пары: (1,2) и (2,3).
 		/// </returns>
-		public static IEnumerable<Tuple<T, T>> Bigramms<T>(this IEnumerable<T> items)
+		public static IEnumerable<Tuple<T, T>> Bigrams<T>(this IEnumerable<T> items)
 		{
 		    var firstItemPassed = false;
 		    var prevItem = default(T);

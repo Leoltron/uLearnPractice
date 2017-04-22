@@ -54,21 +54,21 @@ namespace linq_slideviews
 		[Test]
 		public void BigramsOfSingleItemList()
 		{
-			var actual = new[] { 42.0 }.Bigramms();
+			var actual = new[] { 42.0 }.Bigrams();
 			Assert.That(actual, Is.Empty);
 		}
 
 		[Test]
 		public void BigramsOfTwoItemList()
 		{
-			var actual = new[] { 1, 2 }.Bigramms();
+			var actual = new[] { 1, 2 }.Bigrams();
 			Assert.That(actual, Is.EqualTo(new[] { Tuple.Create(1, 2) }));
 		}
 
 		[Test]
 		public void BigramsOfLongList()
 		{
-			var actual = Enumerable.Range(100, 1000).Bigramms().ToList();
+			var actual = Enumerable.Range(100, 1000).Bigrams().ToList();
 			for (int index = 0; index < actual.Count; index++)
 			{
 				var tuple = actual[index];

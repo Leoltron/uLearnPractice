@@ -7,25 +7,6 @@ namespace linq_slideviews
 {
     public class ParsingTask
     {
-        private static bool TryParseSlydeType(string s, out SlideType slideType)
-        {
-            switch (s.ToLower())
-            {
-                case "theory":
-                    slideType = SlideType.Theory;
-                    return true;
-                case "exercise":
-                    slideType = SlideType.Exercise;
-                    return true;
-                case "quiz":
-                    slideType = SlideType.Quiz;
-                    return true;
-                default:
-                    slideType = SlideType.Theory;
-                    return false;
-            }
-        }
-
         public static IDictionary<int, SlideRecord> ParseSlideRecords(IEnumerable<string> lines)
         {
             return
@@ -57,9 +38,9 @@ namespace linq_slideviews
                         CultureInfo.InvariantCulture,
                         DateTimeStyles.None), slides[slideId].SlideType);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw new FormatException($"Wrong line [{line}]");
+                throw new FormatException($"Wrong line [{line}]", e);
             }
         }
 
@@ -73,7 +54,7 @@ namespace linq_slideviews
                 return null;
 
             SlideType type;
-            if (!TryParseSlydeType(data[1], out type))
+            if (!Enum.TryParse(data[1], true, out type))
                 return null;
 
             return new SlideRecord(id, type, data[2]);
