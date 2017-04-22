@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "Seminar\TestProject.csproj", "{BACB2FC6-D2BC-4EAD-8F89-835E586DC5A8}"
 EndProject
@@ -24,6 +24,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "func-rocket", "func-rocket\func-rocket.csproj", "{AEA51C51-7741-4686-9292-0EDD8F70C4AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "linq-slideviews", "linq-slideviews\linq-slideviews.csproj", "{8BBEF84F-5BCE-446B-829A-81517544BDFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tickets", "Tickets.exercise\Tickets.csproj", "{9AEDE3C2-97BB-4273-8F51-6C08BF49C98B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskTree", "DiskTree.exercise\DiskTree.csproj", "{15F6B22A-18E4-4F37-A98E-223F23AA3B47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flags", "Flags.exercise\Flags.csproj", "{F894BC21-E942-4207-84F3-A511FB9A2BB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +81,18 @@ Global
 		{8BBEF84F-5BCE-446B-829A-81517544BDFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BBEF84F-5BCE-446B-829A-81517544BDFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BBEF84F-5BCE-446B-829A-81517544BDFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AEDE3C2-97BB-4273-8F51-6C08BF49C98B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AEDE3C2-97BB-4273-8F51-6C08BF49C98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AEDE3C2-97BB-4273-8F51-6C08BF49C98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AEDE3C2-97BB-4273-8F51-6C08BF49C98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F6B22A-18E4-4F37-A98E-223F23AA3B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F6B22A-18E4-4F37-A98E-223F23AA3B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F6B22A-18E4-4F37-A98E-223F23AA3B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F6B22A-18E4-4F37-A98E-223F23AA3B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F894BC21-E942-4207-84F3-A511FB9A2BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F894BC21-E942-4207-84F3-A511FB9A2BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F894BC21-E942-4207-84F3-A511FB9A2BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F894BC21-E942-4207-84F3-A511FB9A2BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
