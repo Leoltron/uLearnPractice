@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "Seminar\TestProject.csproj", "{BACB2FC6-D2BC-4EAD-8F89-835E586DC5A8}"
 EndProject
@@ -30,6 +30,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskTree", "DiskTree.exercise\DiskTree.csproj", "{15F6B22A-18E4-4F37-A98E-223F23AA3B47}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flags", "Flags.exercise\Flags.csproj", "{F894BC21-E942-4207-84F3-A511FB9A2BB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTrees", "BinaryTrees.exercise\BinaryTrees.csproj", "{47D69F1C-B668-4BB1-923E-60351878C64D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{F894BC21-E942-4207-84F3-A511FB9A2BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F894BC21-E942-4207-84F3-A511FB9A2BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F894BC21-E942-4207-84F3-A511FB9A2BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D69F1C-B668-4BB1-923E-60351878C64D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D69F1C-B668-4BB1-923E-60351878C64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D69F1C-B668-4BB1-923E-60351878C64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D69F1C-B668-4BB1-923E-60351878C64D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
