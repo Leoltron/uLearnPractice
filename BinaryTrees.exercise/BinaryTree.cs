@@ -38,31 +38,28 @@ namespace BinaryTrees
             else
             {
                 var currentNode = root;
-                while (!TryAddChildOrGoDeeper(ref currentNode, key)){}
-            }
-        }
-
-        private static bool TryAddChildOrGoDeeper(ref TreeNode<T> currentNode, T key)
-        {
-            if (currentNode.Value.CompareTo(key) > 0)
-            {
-                if (currentNode.Left == null)
+                while (true)
                 {
-                    currentNode.Left = new TreeNode<T>(key);
-                    return true;
+                    if (currentNode.Value.CompareTo(key) > 0)
+                    {
+                        if (currentNode.Left == null)
+                        {
+                            currentNode.Left = new TreeNode<T>(key);
+                            break;
+                        }
+                        currentNode = currentNode.Left;
+                    }
+                    else
+                    {
+                        if (currentNode.Right == null)
+                        {
+                            currentNode.Right = new TreeNode<T>(key);
+                            break;
+                        }
+                        currentNode = currentNode.Right;
+                    }
                 }
-                currentNode = currentNode.Left;
             }
-            else
-            {
-                if (currentNode.Right == null)
-                {
-                    currentNode.Right = new TreeNode<T>(key);
-                    return true;
-                }
-                currentNode = currentNode.Right;
-            }
-            return false;
         }
 
         public bool Contains(T key)
